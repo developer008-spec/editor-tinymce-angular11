@@ -1,2 +1,14 @@
-<h1>TinyMCE 5 Angular Demo</h1>
-<editor [init]="config"></editor>
+<div class="section">
+  <h1>TinyMCE 5 Angular Demo</h1>
+
+  <form [formGroup]="myForm">
+    <editor [init]="config" [formControl]="myForm.controls.body" (onKeyUp)="handleEditorText()"></editor>
+  </form>
+</div>
+<div class="section">
+
+  <h1>Preview:</h1>
+  <hr/>
+  <hr/>
+  <div [innerHtml]="htmlContent"></div>
+</div>
